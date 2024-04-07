@@ -33,11 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll("img");
 
     const resultDisplay = document.querySelector("#score");
-    const headline = document.querySelector(".headline-score")
+    const headline = document.querySelector(".headline-score");
     const optionOneId = cardChosenId[0];
     const optionTwoId = cardChosenId[1];
-    console.log(cards[optionOneId]);
-    console.log(cards[optionTwoId]);
+
     if (cardChosen[0] === cardChosen[1]) {
       cards[optionOneId].setAttribute("src", "images/white.png");
       cards[optionTwoId].setAttribute("src", "images/white.png");
@@ -49,8 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     cardChosen = [];
     cardChosenId = [];
-    console.log(cardsWon.length);
-    console.log(cardArray.length / 2);
+
     resultDisplay.textContent = cardsWon.length;
     if (cardsWon.length === cardArray.length / 2) {
       headline.textContent = "congrats you won";
@@ -58,8 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // flip card
   function flipCard() {
-    console.log(this);
-
     const cardId = this.getAttribute("data-id");
     cardChosen.push(cardArray[cardId].name);
     cardChosenId.push(cardId);
